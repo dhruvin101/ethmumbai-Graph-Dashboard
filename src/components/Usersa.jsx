@@ -69,6 +69,30 @@ function Usersa() {
 
   return (
     <>
+    <div className="section centered1">
+        <h1>Query User by ID</h1>
+        <div className="centered">
+          <input
+            type="text"
+            placeholder="Enter User ID"
+            value={inputId}
+            onChange={handleInputChange}
+          />
+          <button onClick={handleQueryById}>Query</button>
+        </div>
+        {userDetails && (
+          <div className="user-details">
+            <h2>User Details</h2>
+            <p>ID: {userDetails.id}</p>
+            <p>User Address: {userDetails.userAddress}</p>
+            <p>Aadhar QR Code: {userDetails.aadharQRCode}</p>
+            <p>Name: {userDetails.name}</p>
+            <p>Block Number: {userDetails.blockNumber}</p>
+            <p>Block Timestamp: {userDetails.blockTimestamp}</p>
+            <p>Transaction Hash: {userDetails.transactionHash}</p>
+          </div>
+        )}
+      </div>
       <div className="container">
         <div className="section">
           <h1>Users Information</h1>
@@ -100,30 +124,7 @@ function Usersa() {
           </table>
         </div>
       </div>
-      <div className="section">
-        <h1>Query User by ID</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter User ID"
-            value={inputId}
-            onChange={handleInputChange}
-          />
-          <button onClick={handleQueryById}>Query</button>
-        </div>
-        {userDetails && (
-          <div className="user-details">
-            <h2>User Details</h2>
-            <p>ID: {userDetails.id}</p>
-            <p>User Address: {userDetails.userAddress}</p>
-            <p>Aadhar QR Code: {userDetails.aadharQRCode}</p>
-            <p>Name: {userDetails.name}</p>
-            <p>Block Number: {userDetails.blockNumber}</p>
-            <p>Block Timestamp: {userDetails.blockTimestamp}</p>
-            <p>Transaction Hash: {userDetails.transactionHash}</p>
-          </div>
-        )}
-      </div>
+      
     </>
   );
 }

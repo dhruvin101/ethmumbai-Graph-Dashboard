@@ -70,6 +70,30 @@ function Transfers() {
 
   return (
     <>
+    <div className="section centered1">
+        <h1>Query Transfer by ID</h1>
+        <div className="centered">
+          <input
+            type="text"
+            placeholder="Enter Transfer ID"
+            value={inputId}
+            onChange={handleInputChange}
+          />
+          <button onClick={handleQueryById}>Query</button>
+        </div>
+        {transferDetails && (
+          <div className="transfer-details">
+            <h2>Transfer Details</h2>
+            <p>ID: {transferDetails.id}</p>
+            <p>From: {transferDetails.from}</p>
+            <p>To: {transferDetails.to}</p>
+            <p>Value: {transferDetails.value}</p>
+            <p>Block Number: {transferDetails.blockNumber}</p>
+            <p>Block Timestamp: {transferDetails.blockTimestamp}</p>
+            <p>Transaction Hash: {transferDetails.transactionHash}</p>
+          </div>
+        )}
+      </div>
       <div className="container">
         <div className="section">
           <h1>Transfers Information</h1>
@@ -101,30 +125,7 @@ function Transfers() {
           </table>
         </div>
       </div>
-      <div className="section">
-        <h1>Query Transfer by ID</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Transfer ID"
-            value={inputId}
-            onChange={handleInputChange}
-          />
-          <button onClick={handleQueryById}>Query</button>
-        </div>
-        {transferDetails && (
-          <div className="transfer-details">
-            <h2>Transfer Details</h2>
-            <p>ID: {transferDetails.id}</p>
-            <p>From: {transferDetails.from}</p>
-            <p>To: {transferDetails.to}</p>
-            <p>Value: {transferDetails.value}</p>
-            <p>Block Number: {transferDetails.blockNumber}</p>
-            <p>Block Timestamp: {transferDetails.blockTimestamp}</p>
-            <p>Transaction Hash: {transferDetails.transactionHash}</p>
-          </div>
-        )}
-      </div>
+      
     </>
   );
 }

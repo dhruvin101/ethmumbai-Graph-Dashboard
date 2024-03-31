@@ -70,6 +70,30 @@ function Merchants() {
 
   return (
     <>
+    <div className="section centered1">
+        <h1>Query Merchant by ID</h1>
+        <div className="centered">
+          <input
+            type="text"
+            placeholder="Enter Merchant ID"
+            value={inputId}
+            onChange={handleInputChange}
+          />
+          <button onClick={handleQueryById}>Query</button>
+        </div>
+        {merchantDetails && (
+          <div className="merchant-details">
+            <h2>Merchant Details</h2>
+            <p>ID: {merchantDetails.id}</p>
+            <p>Merchant Address: {merchantDetails.merchantAddress}</p>
+            <p>Merchant Identifier: {merchantDetails.merchantIdentifier}</p>
+            <p>Name: {merchantDetails.name}</p>
+            <p>Block Number: {merchantDetails.blockNumber}</p>
+            <p>Block Timestamp: {merchantDetails.blockTimestamp}</p>
+            <p>Transaction Hash: {merchantDetails.transactionHash}</p>
+          </div>
+        )}
+      </div>
       <div className="container">
         <div className="section">
           <h1>Merchants Information</h1>
@@ -101,30 +125,7 @@ function Merchants() {
           </table>
         </div>
       </div>
-      <div className="section">
-        <h1>Query Merchant by ID</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Merchant ID"
-            value={inputId}
-            onChange={handleInputChange}
-          />
-          <button onClick={handleQueryById}>Query</button>
-        </div>
-        {merchantDetails && (
-          <div className="merchant-details">
-            <h2>Merchant Details</h2>
-            <p>ID: {merchantDetails.id}</p>
-            <p>Merchant Address: {merchantDetails.merchantAddress}</p>
-            <p>Merchant Identifier: {merchantDetails.merchantIdentifier}</p>
-            <p>Name: {merchantDetails.name}</p>
-            <p>Block Number: {merchantDetails.blockNumber}</p>
-            <p>Block Timestamp: {merchantDetails.blockTimestamp}</p>
-            <p>Transaction Hash: {merchantDetails.transactionHash}</p>
-          </div>
-        )}
-      </div>
+      
     </>
   );
 }

@@ -68,6 +68,29 @@ function Departments() {
 
   return (
     <>
+    <div className="section centered1">
+        <h1>Query Department by ID</h1>
+        <div className="centered">
+          <input
+            type="text"
+            placeholder="Enter Department ID"
+            value={inputId}
+            onChange={handleInputChange}
+          />
+          <button onClick={handleQueryById}>Query</button>
+        </div>
+        {departmentDetails && (
+          <div className="department-details">
+            <h2>Department Details</h2>
+            <p>ID: {departmentDetails.id}</p>
+            <p>Department Address: {departmentDetails.departmentAddress}</p>
+            <p>Name: {departmentDetails.name}</p>
+            <p>Block Number: {departmentDetails.blockNumber}</p>
+            <p>Block Timestamp: {departmentDetails.blockTimestamp}</p>
+            <p>Transaction Hash: {departmentDetails.transactionHash}</p>
+          </div>
+        )}
+      </div>
       <div className="container">
         <div className="section">
           <h1>Departments Information</h1>
@@ -97,29 +120,7 @@ function Departments() {
           </table>
         </div>
       </div>
-      <div className="section">
-        <h1>Query Department by ID</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Department ID"
-            value={inputId}
-            onChange={handleInputChange}
-          />
-          <button onClick={handleQueryById}>Query</button>
-        </div>
-        {departmentDetails && (
-          <div className="department-details">
-            <h2>Department Details</h2>
-            <p>ID: {departmentDetails.id}</p>
-            <p>Department Address: {departmentDetails.departmentAddress}</p>
-            <p>Name: {departmentDetails.name}</p>
-            <p>Block Number: {departmentDetails.blockNumber}</p>
-            <p>Block Timestamp: {departmentDetails.blockTimestamp}</p>
-            <p>Transaction Hash: {departmentDetails.transactionHash}</p>
-          </div>
-        )}
-      </div>
+      
     </>
   );
 }
