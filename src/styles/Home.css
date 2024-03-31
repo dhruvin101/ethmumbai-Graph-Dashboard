@@ -1,0 +1,90 @@
+/* Home.css */
+h1{
+    text-align: center; 
+  font-weight: bold;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Adjusted card width */
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Increased border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-icon {
+    font-size: 4rem; /* Increased icon size */
+  }
+  
+  .card span {
+    margin-top: 15px; /* Increased margin */
+    font-size: 1.4rem; /* Increased font size */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .education {
+    background-color: #e3f2fd;
+  }
+  
+  .agriculture {
+    background-color: #c8e6c9;
+  }
+  
+  .infrastructure {
+    background-color: #f5f5f5;
+  }
+  
+  .retail {
+    background-color: #f0f4c3;
+  }
+  
+  .medical {
+    background-color: #ffcdd2;
+  }
+  
+  .housing {
+    background-color: #f8bbd0;
+  }
+  
+  .energy {
+    background-color: #fff9c4;
+  }
+  
+  .transportation {
+    background-color: #f5f5f5;
+  }
+  
+  .ngo {
+    background-color: #f0f4c3;
+  }
+  
+  .text-gray-500 {
+    color: #616161;
+  }
+  
+  .text-green-500 {
+    color: #2e7d32;
+  }
+  
+  .text-red-500 {
+    color: #c62828;
+  }
+  
+  .text-yellow-500 {
+    color: #f9a825;
+  }
+  
